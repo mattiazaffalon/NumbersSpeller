@@ -3,7 +3,7 @@ package spellnumbers
 import org.scalatest.{FunSpec, FunSuite, Matchers}
 
 class NumbersSpellerTests extends FunSuite with Matchers with NumbersSpeller {
-  test("spell 0") {
+  test("zero") {
     spell(0) should be("zero")
   }
 
@@ -11,16 +11,28 @@ class NumbersSpellerTests extends FunSuite with Matchers with NumbersSpeller {
     spell(1) should be("one")
   }
 
-  test("spell 105") {
-    spell(105) should be("one hundred and five")
+  test("spell 10") {
+    spell(10) should be("ten")
   }
 
-  test("spell 4567") {
-    spell(4567) should be("four thousand, five hundred and sixty seven")
+  test("spell 101") {
+    spell(101) should be("one hundred and one")
+  }
+
+  test("spell 1001") {
+    spell(1001) should be("one thousand and one")
+  }
+
+  test("spell 1101") {
+    spell(1101) should be("one thousand, one hundred and one")
   }
 
   test("spell 1000000") {
     spell(1000000) should be ("one million")
+  }
+
+  test("spell 1000001") {
+    spell(1000001) should be ("one million and one")
   }
 
   test("spell 56945781") {
